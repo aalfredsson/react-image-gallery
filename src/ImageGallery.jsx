@@ -923,6 +923,7 @@ export default class ImageGallery extends React.Component {
 
   renderItem = (item) => {
     const onImageError = this.props.onImageError || this.handleImageError;
+    var styleImg = 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), url(' + item.original + ')';
 
     return (
       <div className='image-gallery-image'>
@@ -948,7 +949,7 @@ export default class ImageGallery extends React.Component {
               />
             </picture>
           :
-            <img
+            <div
               src={item.original}
               alt={item.originalAlt}
               srcSet={item.srcSet}
@@ -956,6 +957,8 @@ export default class ImageGallery extends React.Component {
               title={item.originalTitle}
               onLoad={this.props.onImageLoad}
               onError={onImageError}
+              className={`test`}
+              style={{width: '100%', height: item.sizes, backgroundImage: styleImg}}
             />
         }
 

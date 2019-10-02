@@ -943,9 +943,11 @@ export default class ImageGallery extends React.Component {
                   />
                 ))
               }
-              <img
+              <div
                 alt={item.originalAlt}
                 src={item.original}
+                className={`test`}
+                style={{width: '100%', height: item.sizes, backgroundImage: styleImg}}
               />
             </picture>
           :

@@ -373,7 +373,7 @@ export default class ImageGallery extends React.Component {
         isTransitioning: nextIndex !== currentIndex,
         offsetPercentage: 0,
         style: {
-          transition: `all ${this.props.slideDuration}ms ease-out`
+          transition: `all ${this.props.slideDuration}ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s`
         }
       }, this.onSliding);
     }
@@ -601,7 +601,7 @@ export default class ImageGallery extends React.Component {
       }
 
       const swipingTransition = {
-        transition: `transform ${swipingTransitionDuration}ms ease-out`
+        transition: `transform ${swipingTransitionDuration}ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s`
       };
 
       this.setState({
